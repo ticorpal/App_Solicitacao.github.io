@@ -17,7 +17,8 @@
       <div class="icon-card" onclick="loadForm('veiculo')">🚗<p>Solicitação de Veículo</p></div>
       <div class="icon-card" onclick="loadForm('caju')"><img src="caju.png" alt="Ícone Caju" /><p>Solicitação Caju</p></div>
 	  <div class="icon-card" onclick="loadForm('chamados TI')"><img src="supti.png" alt="Ícone Chamado" /><p>Solicitação de Chamado TI</p></div>
-	   <div class="icon-card" onclick="loadForm('Antecipação de Pagamentos')">💲<p>Antecipação de Pagamento</p></div>
+	  <div class="icon-card" onclick="loadForm('Antecipação de Pagamentos')">💲<p>Antecipação de Pagamento</p></div>
+	  <div class="icon-card" onclick="loadForm('Gestão de Conhecimento')"><img src="gestao-do-conhecimento.png" alt="Ícone Gestão de Conhecimento" /><p>Gestão de Conhecimento</p></div>
     </div>
 
     <div id="form-container" style="display:none;">
@@ -62,6 +63,9 @@ function loadForm(type) {
 	case "Antecipação de Pagamentos":
       url = "https://forms.office.com/Pages/ResponsePage.aspx?id=emONPyFz50qudewosdtpDDClf35qcbhFlPeWtNcJfuhUN0NOQlNZQ1lHMDI2WDBZNzhZSEtaVk1CQS4u";
 	  break;
+	case "Gestão de Conhecimento":
+      window.open ("https://corpalloteamentos.sharepoint.com/:f:/s/Corpal/IgA4ezDBO_gZS6MGRM0Y4qoZAQPA3xkJO0e3ROuBe9eI7bk?e=wt9reO","_blank");
+      break;
 		  
 	  return;
   }
