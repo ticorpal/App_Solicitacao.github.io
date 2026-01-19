@@ -51,8 +51,51 @@
     </div>
 	</div>  botão ocultado -->
 	
-	<script>
-function abrirRH(event, opcao) {
+  <script>
+
+
+function loadForm(type) {
+  const icons = document.getElementById("icons");
+  const formContainer = document.getElementById("form-container");
+  const iframe = document.getElementById("form-frame");
+  let url = "";
+
+  switch (type) {
+    case "viagem":
+	  window.open ("https://forms.office.com/pages/responsepage.aspx?id=emONPyFz50qudewosdtpDEK_Qs0Wl59OqI5w8rrHBSlUNjZYRUdHUEtKNUNDSEYyV001TE9VU0ZUVy4u&origin=lprLink&route=shorturl","_blank");
+      break;
+    case "hospedagem":
+	  window.open ("https://forms.office.com/pages/responsepage.aspx?id=emONPyFz50qudewosdtpDEK_Qs0Wl59OqI5w8rrHBSlUNDcxRlZHRzBKMjVJM1lWVFc4UU8zOUc0SS4u&origin=lprLink&route=shorturl","_blank");
+      break;
+    case "inovacao":
+      window.open ("https://forms.office.com/Pages/ResponsePage.aspx?id=emONPyFz50qudewosdtpDCPJHkcW2CpMmyPiHvcb7dFUOUxBVkkzTExFVlZSWVNETjVSMkw5MDZJRi4u","_blank");
+      break;
+    case "veiculo":
+	  window.open ("https://forms.office.com/pages/responsepage.aspx?id=emONPyFz50qudewosdtpDEK_Qs0Wl59OqI5w8rrHBSlUMkUyOUNWVTVBQ1hHMUtDMkIwTUU0TUZTQi4u&origin=lprLink&route=shorturl","_blank");
+      break;
+    case "caju":
+	  window.open ("https://forms.office.com/Pages/ResponsePage.aspx?id=emONPyFz50qudewosdtpDOBfNYYroc1Opt5ttN-afM5UNjVXMU1VQUFWRUFJWFo0UUoxSUVJSjlBTS4u","_blank");
+	  break;
+	case "chamados TI":
+      window.open ("http://glpi.corpalincorporadora.com.br:8000/front/ticket.form.php","_blank");
+      break;
+	case "Antecipação de Pagamentos":
+	  window.open ("https://forms.office.com/Pages/ResponsePage.aspx?id=emONPyFz50qudewosdtpDDClf35qcbhFlPeWtNcJfuhUN0NOQlNZQ1lHMDI2WDBZNzhZSEtaVk1CQS4u","_blank");
+	  break;
+	case "Gestão de Conhecimento":
+      window.open ("https://corpalloteamentos.sharepoint.com/:f:/s/Corpal/IgA4ezDBO_gZS6MGRM0Y4qoZAQPA3xkJO0e3ROuBe9eI7bk?e=wt9reO","_blank");
+      break;
+	  
+	  return;
+  }
+  
+  icons.style.display = "none";
+  formContainer.style.display = "block";
+  iframe.src = url;
+}
+
+
+ function abrirRH(event, opcao) {
   event.stopPropagation(); // impede o clique do card pai
 
   if (opcao === "play") {
@@ -69,51 +112,8 @@ function abrirRH(event, opcao) {
     );
   }
 }
-</script>
 
 
-
-  <script>
-
-
-function loadForm(type) {
-  const icons = document.getElementById("icons");
-  const formContainer = document.getElementById("form-container");
-  const iframe = document.getElementById("form-frame");
-  let url = "";
-
-  switch (type) {
-    case "viagem":
-      url = "https://forms.office.com/pages/responsepage.aspx?id=emONPyFz50qudewosdtpDEK_Qs0Wl59OqI5w8rrHBSlUNjZYRUdHUEtKNUNDSEYyV001TE9VU0ZUVy4u&origin=lprLink&route=shorturl";
-      break;
-    case "hospedagem":
-      url = "https://forms.office.com/pages/responsepage.aspx?id=emONPyFz50qudewosdtpDEK_Qs0Wl59OqI5w8rrHBSlUNDcxRlZHRzBKMjVJM1lWVFc4UU8zOUc0SS4u&origin=lprLink&route=shorturl";
-      break;
-    case "inovacao":
-      url = "https://forms.office.com/Pages/ResponsePage.aspx?id=emONPyFz50qudewosdtpDCPJHkcW2CpMmyPiHvcb7dFUOUxBVkkzTExFVlZSWVNETjVSMkw5MDZJRi4u";
-      break;
-    case "veiculo":
-      url = "https://forms.office.com/pages/responsepage.aspx?id=emONPyFz50qudewosdtpDEK_Qs0Wl59OqI5w8rrHBSlUMkUyOUNWVTVBQ1hHMUtDMkIwTUU0TUZTQi4u&origin=lprLink&route=shorturl";
-      break;
-    case "caju":
-      url = "https://forms.office.com/Pages/ResponsePage.aspx?id=emONPyFz50qudewosdtpDOBfNYYroc1Opt5ttN-afM5UNjVXMU1VQUFWRUFJWFo0UUoxSUVJSjlBTS4u";
-	  break;
-	case "chamados TI":
-      window.open ("http://glpi.corpalincorporadora.com.br:8000/front/ticket.form.php","_blank");
-      break;
-	case "Antecipação de Pagamentos":
-      url = "https://forms.office.com/Pages/ResponsePage.aspx?id=emONPyFz50qudewosdtpDDClf35qcbhFlPeWtNcJfuhUN0NOQlNZQ1lHMDI2WDBZNzhZSEtaVk1CQS4u";
-	  break;
-	case "Gestão de Conhecimento":
-      window.open ("https://corpalloteamentos.sharepoint.com/:f:/s/Corpal/IgA4ezDBO_gZS6MGRM0Y4qoZAQPA3xkJO0e3ROuBe9eI7bk?e=wt9reO","_blank");
-      break;
-	  
-	  return;
-  
-  icons.style.display = "none";
-  formContainer.style.display = "block";
-  iframe.src = url;
-}
 
 function voltarInicio() {
   const form = document.getElementById('form-frame');
