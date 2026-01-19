@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Corpal Solicitações</title>
   <link rel="stylesheet" href="style.css" />
+  
 </head>
 <body>
   <div class="container">
@@ -17,9 +18,25 @@
       <div class="icon-card" onclick="loadForm('veiculo')">🚗<p>Solicitação de Veículo</p></div>
       <div class="icon-card" onclick="loadForm('caju')"><img src="caju.png" alt="Ícone Caju" /><p>Solicitação Caju</p></div>
 	  <div class="icon-card" onclick="loadForm('chamados TI')"><img src="supti.png" alt="Ícone Chamado" /><p>Solicitação de Chamado TI</p></div>
-	  <div class="icon-card" onclick="loadForm('Antecipação de Pagamentos')">💲<p>Antecipação de Pagamento</p></div>
-	  <div class="icon-card" onclick="loadForm('Gestão de Conhecimento')"><img src="gestao-do-conhecimento.png" alt="Ícone Gestão de Conhecimento" /><p>Gestão de Conhecimento</p></div>
+	  <div class="icon-card" onclick="loadForm('Antecipação de Pagamentos')"><p></p>💲<p></p><p><p>Antecipação de Pagamento</p></p></div>
+	  <div class="icon-card" onclick="loadForm('Gestão de Conhecimento')"><p></p><img src="gestao-do-conhecimento.png" alt="Ícone Gestão de Conhecimento" /><p></p><p>Gestão de Conhecimento</p></div>
+	  <div class="icon-card rh-card" onclick="toggleRH(event)">
+	  
+  <img src="app rh.png" alt="Ícone App RH" />
+  <p>Aplicativo RH</p>
+
+  <div class="rh-options hidden">
+    <div class="sub-icon" onclick="abrirRH(event, 'play')">
+	<p></p>
+      <img src="Playstore.png" />
     </div>
+
+    <div class="sub-icon" onclick="abrirRH(event, 'apple')">
+      <img src="appstore.png" />
+    </div>
+  </div>
+</div>
+
 
     <div id="form-container" style="display:none;">
       <div id="form-header">
@@ -28,12 +45,36 @@
       <iframe id="form-frame" src="" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
     </div>
 
+
       <!-- <div id="admin-access" style="margin-top: 20px;">
       <button class="admin-button" onclick="acessoAdmin()">🔐 Acesso Administrador</button>
     </div>
 	</div>  botão ocultado -->
+	
+	<script>
+function abrirRH(event, opcao) {
+  event.stopPropagation(); // impede o clique do card pai
+
+  if (opcao === "play") {
+    window.open(
+      "https://play.google.com/store/apps/details?id=br.com.senior.employee&pcampaignid=web_share",
+      "_blank"
+    );
+  }
+
+  if (opcao === "apple") {
+    window.open(
+      "https://apps.apple.com/br/app/waapi/id1594233493",
+      "_blank"
+    );
+  }
+}
+</script>
+
+
 
   <script>
+
 
 function loadForm(type) {
   const icons = document.getElementById("icons");
@@ -66,10 +107,9 @@ function loadForm(type) {
 	case "Gestão de Conhecimento":
       window.open ("https://corpalloteamentos.sharepoint.com/:f:/s/Corpal/IgA4ezDBO_gZS6MGRM0Y4qoZAQPA3xkJO0e3ROuBe9eI7bk?e=wt9reO","_blank");
       break;
-		  
+	  
 	  return;
-  }
-
+  
   icons.style.display = "none";
   formContainer.style.display = "block";
   iframe.src = url;
