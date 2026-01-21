@@ -91,4 +91,9 @@ h1 {
 
 .sub-icon {
   width: 90px;
-  background:
+  background: white
+}
+  
+#fornecedor_logo {
+  width: 30%;
+}
